@@ -1,0 +1,3 @@
+[submodule "alcotest"]
+	path = alcotest
+	url = git@github.com:mirage/alcotest.git
