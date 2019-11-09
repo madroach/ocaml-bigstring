@@ -14,10 +14,8 @@ set OCAMLURL=https://ci.appveyor.com/api/projects/madroach/ocaml-appveyor/artifa
 if not exist "%OCAMLROOT%/bin/ocaml.exe" (
   echo Downloading OCaml %OCAML_BRANCH% from "%OCAMLURL%"
   appveyor DownloadFile "%OCAMLURL%" -FileName "%temp%/ocaml.zip"
-  REM Intall 7za using Chocolatey:
-  choco install 7zip.commandline
   cd "%PROGRAMFILES%"
-  7za x -y "%temp%/ocaml.zip"
+  7z x -y "%temp%/ocaml.zip"
   del %temp%\ocaml.zip
 )
 
