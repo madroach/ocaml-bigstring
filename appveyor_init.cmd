@@ -9,7 +9,7 @@ REM set OCAMLROOT=%PROGRAMFILES%/OCaml
 set OCAMLROOT=C:/PROGRA~1/OCaml
 
 if not defined OCAML_BRANCH (set OCAML_BRANCH=4.09)
-set OCAMLURL=https://ci.appveyor.com/api/projects/madroach/ocaml-appveyor/artifacts/ocaml-4.09.0.zip
+set OCAMLURL="https://ci.appveyor.com/api/projects/madroach/ocaml-appveyor/artifacts/ocaml-%OCAML_BRANCH%.zip"
 
 if not exist "%OCAMLROOT%/bin/ocaml.exe" (
   echo Downloading OCaml %OCAML_BRANCH% from "%OCAMLURL%"
