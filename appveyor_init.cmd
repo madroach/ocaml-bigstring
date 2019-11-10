@@ -7,6 +7,7 @@ REM execute this script.  Execute bash with the option "-l".
 
 REM set OCAMLROOT=%PROGRAMFILES%/OCaml
 set OCAMLROOT=C:/PROGRA~1/OCaml
+REM set OPAMROOT=C:/PROGRA~1/OPAM
 
 if not defined OCAML_BRANCH (set OCAML_BRANCH=4.09)
 set OCAMLURL="https://ci.appveyor.com/api/projects/madroach/ocaml-appveyor/artifacts/ocaml-%OCAML_BRANCH%.zip"
@@ -27,6 +28,8 @@ call "C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin\SetEnv.cmd" /x64
 
 set Path=%OCAMLROOT%\bin;%OCAMLROOT%\bin\flexdll;C:\opam\bin;%Path%
 set CAML_LD_LIBRARY_PATH=%OCAMLROOT%/lib/stublibs
+REM set OCAMLTOP_INCLUDE_PATH="%OPAMROOT%\ocaml-system\lib\toplevel"
+set OCAMLRUNPARAM="bs=8M"
 
 set CYGWINBASH=C:\cygwin\bin\bash.exe
 
