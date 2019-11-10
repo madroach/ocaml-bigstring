@@ -43,4 +43,7 @@ if exist %CYGWINBASH% (
   %CYGWINBASH% -lc "tr -d '\\r' </tmp/env >> ~/.bash_profile"
 )
 
+cd "%APPVEYOR_BUILD_FOLDER%"
+opam init -vv --yes --compiler=ocaml-system https://github.com/madroach/opam-repository.git
+
 set <NUL /p=Ready to use OCaml & ocamlc -version
