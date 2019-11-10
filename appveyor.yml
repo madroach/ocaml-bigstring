@@ -8,4 +8,6 @@ build_script:
   - cd "%APPVEYOR_BUILD_FOLDER%"
   - opam init --no-setup --yes --compiler=ocaml-system https://github.com/madroach/opam-repository.git
   - opam install --yes --verbose --jobs=1 alcotest
+  - opam exec -- dune build @install
+test_script:
   - opam exec -- dune runtest
