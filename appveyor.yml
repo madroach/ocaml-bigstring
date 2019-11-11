@@ -2,10 +2,10 @@ install:
   - cd "%APPVEYOR_BUILD_FOLDER%"
   - appveyor_init.cmd
 environment:
-  OPAMROOT: 'C:/PROGRA~1/OPAM'
+  OPAMROOT: 'C:/OPAM'
   OCAMLTOP_INCLUDE_PATH: 'C:/PROGRA~1/OPAM/ocaml-system/lib/toplevel'
   OCAMLLIB: 'C:/PROGRA~1/OCaml/lib/ocaml'
-  OCAMLPATH: 'C:/PROGRA~1/OPAM/ocaml-system/lib'
+  OCAMLPATH: 'C:/OPAM/ocaml-system/lib'
   OCAMLRUNPARAM: "bs=8M"
 build_script:
   - cd "%APPVEYOR_BUILD_FOLDER%"

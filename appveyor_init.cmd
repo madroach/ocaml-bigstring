@@ -7,7 +7,7 @@ REM execute this script.  Execute bash with the option "-l".
 
 REM set OCAMLROOT=%PROGRAMFILES%/OCaml
 set OCAMLROOT=C:/PROGRA~1/OCaml
-set OPAMROOT=C:/PROGRA~1/OPAM
+set OPAMROOT=C:/OPAM
 
 if not defined OCAML_BRANCH (set OCAML_BRANCH=4.09)
 set OCAMLURL="https://ci.appveyor.com/api/projects/madroach/ocaml-appveyor/artifacts/ocaml-%OCAML_BRANCH%.zip"
