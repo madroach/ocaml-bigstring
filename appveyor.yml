@@ -11,7 +11,10 @@ build_script:
   - cd "%APPVEYOR_BUILD_FOLDER%"
   - opam pin --no-action --verbose stdlib-shims https://github.com/ocaml/stdlib-shims.git
   - opam install --yes --verbose cmdliner
-  - dir "%OPAMROOT%" /S
+  - cd C:/
+  - dir cmdliner.cma /S
+  - dir cmdliner.* /S
+  - dir cmdliner* /S
 #  - opam install --yes --verbose alcotest
 #  - opam exec -- dune build @install
 #test_script:
