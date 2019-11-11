@@ -1,6 +1,7 @@
 install:
   - cd "%APPVEYOR_BUILD_FOLDER%"
-  - appveyor_init.cmd
+  - appveyor DownloadFile "https://raw.githubusercontent.com/madroach/ocaml-appveyor/master/opam_init.cmd"
+  - opam_init.cmd
 build_script:
   - cd "%APPVEYOR_BUILD_FOLDER%"
   - echo OPAMROOT %OPAMROOT%
