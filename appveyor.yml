@@ -2,6 +2,7 @@ install:
   - cd "%APPVEYOR_BUILD_FOLDER%"
   - appveyor_init.cmd
 environment:
+  OPAMROOT: 'C:/PROGRA~1/OPAM'
   OCAMLTOP_INCLUDE_PATH: 'C:/PROGRA~1/OPAM/ocaml-system/lib/toplevel'
   OCAMLLIB: 'C:/PROGRA~1/OCaml/lib/ocaml'
   OCAMLPATH: 'C:/PROGRA~1/OPAM/ocaml-system/lib'
@@ -9,6 +10,10 @@ environment:
 build_script:
   - cd "%APPVEYOR_BUILD_FOLDER%"
   - opam pin --no-action --verbose stdlib-shims https://github.com/ocaml/stdlib-shims.git
+  - opam install --yes --verbose cmdliner
+  - 7z a "opam.zip" "%OPAMROOT%"
+  - appveyor PushArtifact opam.zip
+  - del opam.zip
   - opam install --yes --verbose alcotest
   - opam exec -- dune build @install
 test_script:
