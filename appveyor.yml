@@ -11,10 +11,8 @@ build_script:
   - cd "%APPVEYOR_BUILD_FOLDER%"
   - opam pin --no-action --verbose stdlib-shims https://github.com/ocaml/stdlib-shims.git
   - opam install --yes --verbose cmdliner
-  - 7z a "opam.zip" "%OPAMROOT%"
-  - appveyor PushArtifact opam.zip
-  - del opam.zip
-  - opam install --yes --verbose alcotest
-  - opam exec -- dune build @install
-test_script:
-  - opam exec -- dune runtest
+  - dir "%OPAMROOT%" /S
+#  - opam install --yes --verbose alcotest
+#  - opam exec -- dune build @install
+#test_script:
+#  - opam exec -- dune runtest
