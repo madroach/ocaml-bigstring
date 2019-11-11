@@ -37,6 +37,7 @@ opam init --yes --compiler=ocaml-system https://github.com/madroach/opam-reposit
 REM stdlib-shims 0.1 is broken on Windows - update just to 0.2 ?
 opam pin --no-action stdlib-shims https://github.com/ocaml/stdlib-shims.git
 
+appveyor SetVariable -Name Path -Value %Path%
 appveyor SetVariable -Name OPAMROOT -Value %OPAMROOT%
 set OPAM_SWITCH_PREFIX=%OPAMROOT%/ocaml-system
 appveyor SetVariable -Name OPAM_SWITCH_PREFIX -Value %OPAM_SWITCH_PREFIX%
